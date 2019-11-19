@@ -111,7 +111,7 @@ En primer lugar, crearemos los host deseados (Ubuntu y Centos) y procederemos a 
 
 En el caso del host de CentOS, tendremos que modificar la ip a la de la máquina de ubuntu como se ve en la imagen.
 
-![ipCentOS](configuracionCentos.png)
+![ipCentOS](img/configuracionCentos.png)
 
 Tendremos que modificar el puerto en el que está configurado SSH tanto en CentOS como en Ubuntu del puerto 22 al 22022, como se puede ver en la imagen.
 
