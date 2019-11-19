@@ -119,12 +119,13 @@ Tendremos que modificar el puerto en el que está configurado SSH tanto en CentO
 
 Podemos ver como quedan los items configurados. En el caso de Ubuntu he añadido un item para monitorizar la carga de la CPU y otro para el número de usuarios logueados. En el de CentOS he añadido únicamente para monitorizar la carga de la CPU.
 
-![itemsUbuntu](itemsUbuntu.png)
-![itemsCentOS](centosItems.png)
+![itemsUbuntu](img/itemsUbuntu.png)
+
+![itemsCentOS](img/centosItems.png)
 
 Finalmente, podemos consultar los últimos datos y si queremos, las gráficas particulares en el apartado de Monitorización de Zabbix.
 
-![lastdata](lastdata.png)
+![lastdata](img/lastdata.png)
 
 ## Bibliografía
 + https://www.zabbix.com/documentation/3.4/manual
