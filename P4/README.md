@@ -9,6 +9,9 @@ a benchmarks.
 + Conocer y saber cómo modificar el valor algunos parámetros que pueden mejorar
 las prestaciones.
 
+## Notas
+
+
 ---
 
 [![Creative Commons License][image-1]][1]  
