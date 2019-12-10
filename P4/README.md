@@ -27,6 +27,10 @@ Podemos ejecutar un benchmark (en este caso smallpt):
 
 `phoronix-test-suite benchmark smallpt`
 
+Pero primero necesitaremos ejecutar:
+
+`yum install php-gd php-xml php-cli`
+
 ### Ubuntu
 
 ~~~
@@ -43,6 +47,10 @@ sudo ./install-sh
 Podemos ejecutar un benchmark (en este caso smallpt):
 
 `phoronix-test-suite benchmark smallpt`
+
+Pero primero necesitaremos ejecutar:
+
+`yum install php-gd php-xml`
 
 ### CentOS
 
@@ -63,6 +71,10 @@ cd phoronix-test-suite/
 Podemos ejecutar un benchmark (en este caso smallpt):
 
 `phoronix-test-suite benchmark smallpt`
+
+Pero primero necesitaremos ejecutar:
+
+`yum install php-gd php-xml`
 
 ### Bibliografía
 
