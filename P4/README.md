@@ -225,6 +225,18 @@ Para ello crearemos un test nuevo y le añadiremos:
 + Thread Group (Users)
 + View Results Tree
 
+En este caso, definiremos variable en el Test, tanto el host como el puerto que usaremos (192.168.56.105 y 3000 respectivamente).
+
+![jmeter4](img/jmeter4.png)
+
+Además, en HTTP Resquest Defaults lo volveremos a configurar como en el ejemplo básico pero usando esta vez las variables que hemos definido.
+
+![jmeter5](img/jmeter5.png)
+
+En HTTP Authorization Manager añadiremos un elemnto con la URL, nombre de usuario y contraseña de la API.
+
+![jmeter6](img/jmeter6.png)
+
 ## Bibliografía
 
 + https://www.phoronix-test-suite.com/
