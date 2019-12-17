@@ -46,7 +46,7 @@ $ tar xvf phoronix-test-suite-9.0.1.tar.gz
 
 $ cd phoronix-test-suite/
 
-sudo ./install-sh
+$ sudo ./install-sh
 
 ~~~
 
@@ -150,15 +150,50 @@ Tras ejecutarlos, obtenemos los siguientes resultados:
 
 ### Instalación
 
-Al ser mi sistema anfitrión Ubuntu, podemos instalar Jmeter desde los paquetes de los repositorios de Ubuntu directamente. Ejecutaremos:
+Al ser mi sistema anfitrión Ubuntu, podemos instalar Jmeter desde los paquetes de los repositorios de Ubuntu directamente.
 
 `$ sudo apt install jmeter`
 
+El problema es que la versión que hay en los repositorios es la 2.13, por lo que tendremos que instalar manualmente Jmeter.
+
+Podemos descargar la última versión desde el siguiente enlace e isntalarla del siguiente modo:
+
+~~~
+$ wget http://ftp.cixug.es/apache//jmeter/binaries/apache-jmeter-5.2.1.tgz
+
+$ tar xvf apache-jmeter-5-2-1.tar.gz
+
+~~~
+
+Para ejecutarlo, entraremos en la carpeta siguiente y ejecutaremos el siguiente comando:
+
+~~~
+$ cd apache-jmeter-5-2-1/bin/
+
+$ ./jmeter
+~~~
+
 ### Ejecutando Jmeter
 
-Ejecutaremos jmeter desde el terminal en el anfitrión donde veremos la siguiente pantalla:
+Ejecutaremos jmeter desde el terminal en el anfitrión.
 
-![jemeter1](img/jmeter1.png)
+Una vez dentro de la interfaz crearemos:
+
++ HTTP Request Defaults
++ Thread Group
++ Sampler > HTTP Request
+
+Además, tenemos que configurar el 'HTTP Request Defaults' con nuestro puerto 192.168.56.105.
+
+![jmeter1](img/jmeter1.png)
+
+Y configurar el 'HTTP Request' con el path a '/index.html'.
+
+![jmeter2](img/jmeter2.png)
+
+Finalmente, añadiremos un View Results Tree para ver los resultados y ejecutaremos el test.
+
+![jmeter3](img/jmeter3.png)
 
 ### iseP4Jmeter
 
@@ -178,7 +213,17 @@ Para parar el servicio, ejecutaremos:
 
 `$ docker-compose down`
 
-### Usando Jmeter
+---
+
+Una vez tenemos el servicio en marcha, procederemos a configurar el test de Jmeter.
+
+Para ello crearemos un test nuevo y le añadiremos:
+
++ HTTP Request Defaults
++ HTTP Authorization Manager
++ Thread Group (Admins)
++ Thread Group (Users)
++ View Results Tree
 
 ## Bibliografía
 
