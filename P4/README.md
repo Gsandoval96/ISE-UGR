@@ -118,7 +118,35 @@ De todos modos, para ejecutarlos una vez instalado, ejecutaríamos:
 
 `$ docker run -it phoronix/pts`
 
-### Bibliografía
+## AB
+
+### Instalación
+
+Como en prácticas anteriores instalamos apache2 y httpd, ab viene instalado junto con Apache.
+
+### Funcionamiento
+
+En mi caso, he creado unos archivos html básicos idénticos tanto en Ubuntu Server como en CentOS.
+
+![htmlUbuntu](img/hmtlUBUNTU.png)
+
+![htmlCentos](img/hmtlCENTOS.png)
+
+Nosotros usaremos ab desde nuestro anfitrión con Ubuntu Server y CentOS:
+
+`$ ab -n 1000000 -c 100 http://192.168.56.105/hola.html`
+
+`$ ab -n 1000000 -c 100 http://192.168.56.101/hola.html`
+
+Destacar que debemos solicitar el mismo archivo html en ambas consultas para poder hacer una comparación real entre ambas.
+
+Tras ejecutarlos, obtenemos los siguientes resultados:
+
+![abUbuntu](img/abUBUNTU.png)
+
+![abCentos](img/abCENTOS.png)
+
+## Bibliografía
 
 + https://www.phoronix-test-suite.com/
 + https://openbenchmarking.org
