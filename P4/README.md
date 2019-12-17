@@ -128,9 +128,9 @@ Como en prácticas anteriores instalamos apache2 y httpd, ab viene instalado jun
 
 En mi caso, he creado unos archivos html básicos idénticos tanto en Ubuntu Server como en CentOS.
 
-![htmlUbuntu](img/hmtlUBUNTU.png)
+![htmlUbuntu](img/htmlUBUNTU.png)
 
-![htmlCentos](img/hmtlCENTOS.png)
+![htmlCentos](img/htmlCENTOS.png)
 
 Nosotros usaremos ab desde nuestro anfitrión con Ubuntu Server y CentOS:
 
@@ -146,10 +146,47 @@ Tras ejecutarlos, obtenemos los siguientes resultados:
 
 ![abCentos](img/abCENTOS.png)
 
+## Jmeter
+
+### Instalación
+
+Al ser mi sistema anfitrión Ubuntu, podemos instalar Jmeter desde los paquetes de los repositorios de Ubuntu directamente. Ejecutaremos:
+
+`$ sudo apt install jmeter`
+
+### Ejecutando Jmeter
+
+Ejecutaremos jmeter desde el terminal en el anfitrión donde veremos la siguiente pantalla:
+
+![jemeter1](img/jmeter1.png)
+
+### iseP4Jmeter
+
+En primer lugar, clonaremos el repositorio entregado para la realizar las prácticas en nuestra máquina (en nuestro caso en Ubuntu Server).
+
+![repojmeter](img/repoJMETER.png)
+
+Una vez clonado el repositorio, para ponerlo en marcha, entraremos en la carpeta que acabamos de clonar y tendremos que ejecutar:
+
+`$ docker-compose up -d`
+
+Podemos comprobar que funciona accediendo desde nuestro navegador a la ip 192.168.56.105:3000, y deberíamos ver:
+
+![iseP4Jmeter](img/iseP4Jmeter.png)
+
+Para parar el servicio, ejecutaremos:
+
+`$ docker-compose down`
+
+### Usando Jmeter
+
 ## Bibliografía
 
 + https://www.phoronix-test-suite.com/
 + https://openbenchmarking.org
++ https://httpd.apache.org/docs/2.4/programs/ab.html
++ https://packages.ubuntu.com/search?keywords=jmeter
+
 
 ---
 
