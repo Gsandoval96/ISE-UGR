@@ -13,7 +13,13 @@ las prestaciones.
 
 ## Phoronix
 
+Algunos de los benchmark que podríamos ejecutar por ejemplo son apache, php, smallpt o sudokut.
+
+Podemos buscar becnhmarks en páginas como https://openbenchmarking.org.
+
 ### Anfitrión
+
+Mi sistema anfitrión es Ubuntu 18.04.3 LTS.
 
 Nos decargamos el paquete desde:
 
@@ -21,24 +27,24 @@ https://www.phoronix-test-suite.com/
 
 Para instalarlo ejecutamos:
 
-`sudo dpkg -i phoronix-test-suite_9.0.1_all.deb `
+`$ sudo dpkg -i phoronix-test-suite_9.0.1_all.deb `
 
 Podemos ejecutar un benchmark (en este caso smallpt):
 
-`phoronix-test-suite benchmark smallpt`
+`$ phoronix-test-suite benchmark smallpt`
 
 Pero primero necesitaremos ejecutar:
 
-`yum install php-gd php-xml php-cli`
+`$ yum install php-gd php-xml php-cli`
 
-### Ubuntu
+### Ubuntu Server
 
 ~~~
-wget https://phoronix-test-suite.com/releases/phoronix-test-suite-9.0.1.tar.gz
+$ wget https://phoronix-test-suite.com/releases/phoronix-test-suite-9.0.1.tar.gz
 
-tar xvf phoronix-test-suite-9.0.1.tar.gz
+$ tar xvf phoronix-test-suite-9.0.1.tar.gz
 
-cd phoronix-test-suite/
+$ cd phoronix-test-suite/
 
 sudo ./install-sh
 
@@ -46,11 +52,11 @@ sudo ./install-sh
 
 Podemos ejecutar un benchmark (en este caso smallpt):
 
-`phoronix-test-suite benchmark smallpt`
+`$ phoronix-test-suite benchmark smallpt`
 
 Pero primero necesitaremos ejecutar:
 
-`yum install php-gd php-xml`
+`$ yum install php-gd php-xml`
 
 ### CentOS
 
@@ -58,28 +64,64 @@ Recordar entrar como root al inciar sesión.
 
 ~~~
 
-wget https://phoronix-test-suite.com/releases/phoronix-test-suite-9.0.1.tar.gz
+$ wget https://phoronix-test-suite.com/releases/phoronix-test-suite-9.0.1.tar.gz
 
-tar xvf phoronix-test-suite-9.0.1.tar.gz
+$ tar xvf phoronix-test-suite-9.0.1.tar.gz
 
-cd phoronix-test-suite/
+$ cd phoronix-test-suite/
 
-./install-sh
+$ ./install-sh
 
 ~~~
 
 Podemos ejecutar un benchmark (en este caso smallpt):
 
-`phoronix-test-suite benchmark smallpt`
+`$ phoronix-test-suite benchmark smallpt`
 
 Pero primero necesitaremos ejecutar:
 
-`yum install php-gd php-xml`
+`$ yum install php-gd php-xml`
+
+### Docker y Docker-Compose
+
+En mi caso, instalaré Docker y Docker-Compose en Ubuntu Server.
+
+Añadimos la llave GPG (Gnu Privacy Guard) de Docker a APT:
+
+`$ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add`
+
+Añadimos los repositorios:
+
+`$ sudo add-apt-repository "deb [arch=amd64]
+https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"`
+
+Y actualizamos e instalamos:
+
+`$ sudo apt update
+&& sudo apt install docker-ce docker-compose`
+
+Y tenemos que añadir nuestro usuario (en mi caso guillermoss) al grupo de docker:
+
+`$ sudo usermod -aG docker guillermoss`
+
+Por último debemos reiniciar la máquina para que se apliquen los cambios.
+
+### Phoronix en Docker
+
+Una vez instalado Docker, ejecutamos el siguiente comando para instalar Phoronix:
+
+`$ docker pull phoronix/pts`
+
+En nuestro caso, no tenemos suficiente espacio en /var por lo que no se nos isntalará.
+
+De todos modos, para ejecutarlos una vez instalado, ejecutaríamos:
+
+`$ docker run -it phoronix/pts`
 
 ### Bibliografía
 
 + https://www.phoronix-test-suite.com/
-+ https://openbenchmarking.org/test/pts/smallpt
++ https://openbenchmarking.org
 
 ---
 
